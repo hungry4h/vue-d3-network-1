@@ -74,12 +74,12 @@ export default {
       },
       noNodes: false,
       strLinks: true,
-      fontSize: 10,
+      fontSize: 20,
       dragging: false,
-      linkWidth: 1,
+      linkWidth: 3,
       nodeLabels: false,
       linkLabels: false,
-      nodeSize: 5,
+      nodeSize: 20,
       mouseOfst: {
         x: 0,
         y: 0
