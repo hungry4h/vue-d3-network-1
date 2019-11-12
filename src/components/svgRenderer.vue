@@ -64,7 +64,7 @@
     g.labels#link-labels(v-if='linkLabels')
       text.link-label(v-for="link in links"
         :font-size="fontSize"
-        :class='(node._labelClass) ? node._labelClass : ""'
+        :class='(link._labelClass) ? link._labelClass : ""'
         )
         textPath(v-bind:xlink:href="'#' + link.id" startOffset= "50%") {{ link.name }}
 
