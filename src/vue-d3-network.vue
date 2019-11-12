@@ -76,10 +76,10 @@ export default {
       strLinks: true,
       fontSize: 10,
       dragging: false,
-      linkWidth: 3,
+      linkWidth: 1,
       nodeLabels: false,
       linkLabels: false,
-      nodeSize: 200,
+      nodeSize: 5,
       mouseOfst: {
         x: 0,
         y: 0
