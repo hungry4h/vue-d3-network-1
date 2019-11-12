@@ -19,7 +19,7 @@
           @click='emit("linkClick",[$event,link])'
           @touchstart.passive='emit("linkClick",[$event,link])'
           v-bind='linkAttrs(link)'
-          :class='linkClass(link.id)'
+          :class='linkClass(link)'
           :style='linkStyle(link)'
           )
 
@@ -131,14 +131,11 @@ export default {
         cb(null, svgExport.save(svg))
       }
     },
-    linkClass (linkId) {
-      let cssClass = ['link']
-      if (this.linksSelected.hasOwnProperty(linkId)) {
-        cssClass.push('selected')
-      }
-      if (!this.strLinks) {
-        cssClass.push('curve')
-      }
+    linkClass (link, classes = []) {
+      let cssClass = (link._cssClass) ? link._cssClass : []
+      if (!Array.isArray(cssClass)) cssClass = [cssClass]
+      cssClass.push('link')
+      classes.forEach(c => cssClass.push(c))
       return cssClass
     },
     linkPath (link) {
