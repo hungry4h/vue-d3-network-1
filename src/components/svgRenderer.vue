@@ -16,8 +16,7 @@
       div(v-for="link in links"
         :class='(link._cssClass) ? link._cssClass : ""'
         )
-        path(v-for="link in links"
-          :d="linkPath(link)"
+        path(:d="linkPath(link)"
           :id="link.id"
           @click='emit("linkClick",[$event,link])'
           @touchstart.passive='emit("linkClick",[$event,link])'
