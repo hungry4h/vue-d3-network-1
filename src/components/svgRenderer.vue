@@ -137,8 +137,10 @@ export default {
     // modify
     linkClass (link, classes = []) {
       let cssClass = (link._cssClass) ? link._cssClass : []
+      let cssClass2 = link._cssClass2
       if (!Array.isArray(cssClass)) cssClass = [cssClass]
       cssClass.push('link')
+      cssClass.push(cssClass2)
       classes.forEach(c => cssClass.push(c))
       return cssClass
     },
