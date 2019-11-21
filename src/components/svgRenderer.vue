@@ -13,16 +13,15 @@
 
     //-> links
     g.links#l-links
-      div(v-for="link in links"
-        :class='(link._cssClass) ? link._cssClass : ""'
-        )
-        path(:d="linkPath(link)"
+        path(v-for="link in links"
+          :d="linkPath(link)"
           :id="link.id"
           @click='emit("linkClick",[$event,link])'
           @touchstart.passive='emit("linkClick",[$event,link])'
           v-bind='linkAttrs(link)'
           :class='linkClass(link)'
           :style='linkStyle(link)'
+          :visibility='(link.visibility) ? link.visibility : ""'
           )
 
     //- -> nodes
@@ -136,14 +135,12 @@ export default {
         cb(null, svgExport.save(svg))
       }
     },
-    linkClass (linkId) {
-      let cssClass = ['link']
-      if (this.linksSelected.hasOwnProperty(linkId)) {
-        cssClass.push('selected')
-      }
-      if (!this.strLinks) {
-        cssClass.push('curve')
-      }
+    // modify
+    linkClass (link, classes = []) {
+      let cssClass = (link._cssClass) ? link._cssClass : []
+      if (!Array.isArray(cssClass)) cssClass = [cssClass]
+      cssClass.push('link')
+      classes.forEach(c => cssClass.push(c))
       return cssClass
     },
     linkPath (link) {
