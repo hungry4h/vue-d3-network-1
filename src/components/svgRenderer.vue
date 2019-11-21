@@ -21,7 +21,6 @@
           v-bind='linkAttrs(link)'
           :class='linkClass(link)'
           :style='linkStyle(link)'
-          :visibility='(link.visibility) ? link.visibility : ""'
           )
 
     //- -> nodes
