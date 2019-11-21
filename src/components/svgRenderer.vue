@@ -13,6 +13,9 @@
 
     //-> links
     g.links#l-links
+      div(v-for="link in links"
+        :class='(link._cssClass) ? link._cssClass : ""'
+        )
         path(v-for="link in links"
           :d="linkPath(link)"
           :id="link.id"
@@ -134,14 +137,14 @@ export default {
         cb(null, svgExport.save(svg))
       }
     },
-    // modify
-    linkClass (link, classes = []) {
-      let cssClass = (link._cssClass) ? link._cssClass : []
-      let cssClass2 = link._cssClass2
-      if (!Array.isArray(cssClass)) cssClass = [cssClass]
-      cssClass.push('link')
-      cssClass.push(cssClass2)
-      classes.forEach(c => cssClass.push(c))
+    linkClass (linkId) {
+      let cssClass = ['link']
+      if (this.linksSelected.hasOwnProperty(linkId)) {
+        cssClass.push('selected')
+      }
+      if (!this.strLinks) {
+        cssClass.push('curve')
+      }
       return cssClass
     },
     linkPath (link) {
