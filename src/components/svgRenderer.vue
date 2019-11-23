@@ -1,6 +1,6 @@
 <template lang="pug">
   svg-pan-zoom(
-    style="width: 500px; height: 500px; border:1px solid black;"
+    style="width: 100%; height: 100%; border:1px solid teal; overflow:auto"
     :zoomEnabled="true"
     :controlIconsEnabled="true"
     :fit="false"
