@@ -9,7 +9,6 @@
     :mouseWheelZoomEnabled="mouseWheelZoomEnabled"
     :preventMouseEventsDefault="preventMouseEventsDefault"
     :contain="contain"
-    :center="center"
     :viewportSelector="viewportSelector"
     :zoomScaleSensitivity="zoomScaleSensitivity"
     :minZoom="minZoom"
@@ -126,7 +125,6 @@ export default {
     'mouseWheelZoomEnabled',
     'preventMouseEventsDefault',
     'contain',
-    'center',
     'viewportSelector',
     'zoomScaleSensitivity',
     'minZoom',
