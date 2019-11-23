@@ -9,6 +9,7 @@
     :mouseWheelZoomEnabled="mouseWheelZoomEnabled"
     :preventMouseEventsDefault="preventMouseEventsDefault"
     :contain="contain"
+    :center="false"
     :viewportSelector="viewportSelector"
     :zoomScaleSensitivity="zoomScaleSensitivity"
     :minZoom="minZoom"
