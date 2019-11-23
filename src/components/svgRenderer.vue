@@ -1,10 +1,20 @@
 <template lang="pug">
   svg-pan-zoom(
     style="width: 100%; height: 100%; border:1px solid teal; overflow:auto"
-    :zoomEnabled="true"
-    :controlIconsEnabled="true"
-    :fit="true"
-    :center="true"
+    :zoomEnabled="zoomEnabled"
+    :controlIconsEnabled="controlIconsEnabled"
+    :fit="fit"
+    :panEnabled="panEnabled"
+    :dblClickZoomEnable="dblClickZoomEnable"
+    :mouseWheelZoomEnabled="mouseWheelZoomEnabled"
+    :preventMouseEventsDefault="preventMouseEventsDefault"
+    :contain="contain"
+    :center="center"
+    :viewportSelector="viewportSelector"
+    :zoomScaleSensitivity="zoomScaleSensitivity"
+    :minZoom="minZoom"
+    :maxZoom="maxZoom"
+    :refreshRate="refreshRate"
   )
     svg(
       xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +117,21 @@ export default {
     'nodeLabels',
     'linkLabels',
     'labelOffset',
-    'nodeSym'
+    'nodeSym',
+    'zoomEnabled',
+    'controlIconsEnabled',
+    'fit',
+    'panEnabled',
+    'dblClickZoomEnable',
+    'mouseWheelZoomEnabled',
+    'preventMouseEventsDefault',
+    'contain',
+    'center',
+    'viewportSelector',
+    'zoomScaleSensitivity',
+    'minZoom',
+    'maxZoom',
+    'refreshRate'
   ],
 
   computed: {

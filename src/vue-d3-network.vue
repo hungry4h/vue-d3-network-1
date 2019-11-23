@@ -90,7 +90,21 @@ export default {
       },
       simulation: null,
       nodeSvg: null,
-      resizeListener: true
+      resizeListener: true,
+      zoomEnabled: true,
+      controlIconsEnabled: false,
+      fit: true,
+      panEnabled: true,
+      dblClickZoomEnable: true,
+      mouseWheelZoomEnabled: true,
+      preventMouseEventsDefault: true,
+      contain: false,
+      centerAlign: true,
+      viewportSelector: '.svg-pan-zoom_viewport',
+      zoomScaleSensitivity: 0.2,
+      minZoom: 0.5,
+      maxZoom: 10,
+      refreshRate: 'auto'
     }
   },
   render (createElement) {
@@ -112,7 +126,21 @@ export default {
       'offset',
       'padding',
       'nodeSize',
-      'noNodes'
+      'noNodes',
+      'zoomEnabled',
+      'controlIconsEnabled',
+      'fit',
+      'panEnabled',
+      'dblClickZoomEnable',
+      'mouseWheelZoomEnabled',
+      'preventMouseEventsDefault',
+      'contain',
+      'center',
+      'viewportSelector',
+      'zoomScaleSensitivity',
+      'minZoom',
+      'maxZoom',
+      'refreshRate'
     ]
 
     for (let prop of bindProps) {
