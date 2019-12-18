@@ -21,9 +21,6 @@
       :width="size.w"
       :height="size.h"
       class="net-svg"
-      @mouseup='emit("dragEnd",[$event])'
-      @touchend.passive='emit("dragEnd",[$event])'
-      @touchstart.passive=''
       )
 
       //-> links
@@ -48,8 +45,6 @@
             :height='getNodeSize(node, "height")'
             @click='emit("nodeClick",[$event,node])'
             @touchend.passive='emit("nodeClick",[$event,node])'
-            @mousedown.prevent='emit("dragStart",[$event,key])'
-            @touchstart.prevent='emit("dragStart",[$event,key])'
             :x='node.x - getNodeSize(node, "width") / 2'
             :y='node.y - getNodeSize(node, "height") / 2'
             :style='nodeStyle(node)'
