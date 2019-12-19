@@ -60,8 +60,6 @@
           :r="getNodeSize(node) / 2"
           @click='emit("nodeClick",[$event,node])'
           @touchend.passive='emit("nodeClick",[$event,node])'
-          @mousedown.prevent='emit("dragStart",[$event,key])'
-          @touchstart.prevent='emit("dragStart",[$event,key])'
           :cx="node.x"
           :cy="node.y"
           :style='nodeStyle(node)'
